@@ -10,6 +10,8 @@ namespace Deamon
     {
         static void Main(string[] args)
         {
+         
+            Console.ReadLine();
         }
     }
 }
