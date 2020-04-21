@@ -18,7 +18,8 @@ namespace Deamon
                     Api_Helper.Info_Register();
 
                 else if (info.Key == ConsoleKey.NumPad2)
-                    Api_Helper.Info_Get(); 
+                    Api_Helper.Info_Get();
+                Console.WriteLine("Mac addres is : " + Properties.Settings.Default.MacAddres);            
             }
 
 
