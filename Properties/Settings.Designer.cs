@@ -25,10 +25,10 @@ namespace Deamon.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Active {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Active {
             get {
-                return ((string)(this["Active"]));
+                return ((bool)(this["Active"]));
             }
             set {
                 this["Active"] = value;
@@ -56,6 +56,18 @@ namespace Deamon.Properties {
             }
             set {
                 this["Id"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Allowed {
+            get {
+                return ((bool)(this["Allowed"]));
+            }
+            set {
+                this["Allowed"] = value;
             }
         }
     }

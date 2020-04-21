@@ -10,7 +10,19 @@ namespace Deamon
     {
         static void Main(string[] args)
         {
-         
+            
+            while (true)
+            {
+                ConsoleKeyInfo info = Console.ReadKey();
+                if (info.Key == ConsoleKey.NumPad1)
+                    Api_Helper.Info_Register();
+
+                else if (info.Key == ConsoleKey.NumPad2)
+                    Api_Helper.Info_Get(); 
+            }
+
+
+
             Console.ReadLine();
         }
     }
