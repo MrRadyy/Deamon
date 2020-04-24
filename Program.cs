@@ -18,13 +18,13 @@ namespace Deamon
                     Api_Helper.Info_Register();
 
                 else if (info.Key == ConsoleKey.NumPad2)
-                    Api_Helper.Info_Get();
-                Console.WriteLine("Mac addres is : " + Properties.Settings.Default.MacAddres);            
+                {    Api_Helper.Info_Get();
+                Console.WriteLine(" ID:"+ Properties.Settings.Default.Id + " Mac addres is : " + Properties.Settings.Default.MacAddres + " Is allowed:" + Properties.Settings.Default.Allowed);
+                     }
+                Console.ReadLine(); 
             }
 
 
-
-            Console.ReadLine();
         }
     }
 }
