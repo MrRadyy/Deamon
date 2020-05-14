@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Deamon.Backupsa_algo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Deamon
 {
@@ -10,6 +12,7 @@ namespace Deamon
     {
         static void Main(string[] args)
         {
+            
             
             while (true)
             {
@@ -31,7 +34,17 @@ namespace Deamon
                     {
                         Console.WriteLine(" "+item.id +" "+ item.Save_Options);
                     }     
-                }     
+                }  
+                
+                else if (info.Key == ConsoleKey.NumPad4)
+                {
+                    FullBackup New = new FullBackup(@"C:\SourceBackup",@"C:\Andosis");
+
+                    New.Write();
+                    
+
+                }
+
                 Console.ReadLine(); 
                 
                
