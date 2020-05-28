@@ -17,15 +17,15 @@ namespace Deamon
             string Type = Temp.Type_Of_Backup.ToUpper();
             if (Type == "FULL")
             {
-                var FullBackup = new FullBackup(Temp.Source, Temp.Destination);
+                var FullBackup = new FullBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
             }
             else if (Type == "DIFF")
             {
-                var DiffBackup = new DifferentialBackup(Temp.Source, Temp.Destination);
+                var DiffBackup = new DifferentialBackup(Temp.Source, Temp.Destination ,Temp.Save_Options);
             }
             else if(Type == "INC")
             {
-                var IncBackup = new IncrementalBackup(Temp.Source, Temp.Destination);
+                var IncBackup = new IncrementalBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
             }
             else
             {

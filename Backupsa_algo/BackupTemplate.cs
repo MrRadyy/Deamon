@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Compression;
+
 
 namespace Deamon
 {
@@ -16,7 +18,9 @@ namespace Deamon
         protected DirectoryInfo Source { get; set; }
         protected DirectoryInfo Target { get; set; }
 
-        public BackupTemplate(string sSource, string sTarget)
+        protected  string SaveOption { get; set; }
+        
+        public BackupTemplate(string sSource, string sTarget,string SaveOptionQ)
         {
             string Targetos = Path.Combine(sTarget, DateTime.Now.ToString("MM_dd_yyyy_H_mm_ss"));
 
@@ -24,6 +28,8 @@ namespace Deamon
 
             Source = new DirectoryInfo(sSource);
             Target = new DirectoryInfo(Targetos);
+
+            SaveOption = SaveOptionQ;
         }
 
         protected void Write()
@@ -72,6 +78,8 @@ namespace Deamon
         {
             List<string> Comparison = new List<string>();
 
+            string zipPath = @".\result.zip";
+
             foreach (string item in Compare(this.ConfigPath, Source.FullName))
             {
                 string[] ItemParts = item.Split('\\');
@@ -89,7 +97,15 @@ namespace Deamon
                     File.Copy(Source, Target);
                 else
                     Directory.CreateDirectory(Target);
+                
+
             }
+
+            if(SaveOption == "rar" || SaveOption ==  "RAR")
+            {
+                ZipFile.CreateFromDirectory(Target.FullName, Path.Combine(Target.FullName + @".zip"));
+            }
+            
 
             return Comparison;
         }

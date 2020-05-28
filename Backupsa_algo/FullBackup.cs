@@ -9,12 +9,13 @@ namespace Deamon.Backupsa_algo
 {
    public class FullBackup : BackupTemplate
     {              
-        public FullBackup(string sSource, string sTarget) : base(sSource, sTarget)
+        public FullBackup(string sSource, string sTarget, string FileOption) : base(sSource, sTarget,FileOption)
         {
             config = new Config();
             config.snapshots = new List<ModelSnapshot>();
 
             CreateFull(Source, Target);          
+
 
             Write();
         }
