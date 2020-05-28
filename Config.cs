@@ -22,7 +22,7 @@ namespace Deamon
         public void Write(string snaptxt)
         {
             using (System.IO.StreamWriter file =
-           new System.IO.StreamWriter(snaptxt, true))
+            new System.IO.StreamWriter(snaptxt, true))
             {
                 file.WriteLine(Serialize());
             }

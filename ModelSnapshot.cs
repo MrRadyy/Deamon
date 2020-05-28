@@ -13,7 +13,5 @@ namespace Deamon
         public string type { get; set; }
 
         public DateTime created { get; set; }
-
-
     }
 }

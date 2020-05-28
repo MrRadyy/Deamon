@@ -10,7 +10,6 @@ C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\obj\Debug\Deamon.csproj.CopyComplet
 C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\obj\Debug\Deamon.exe
 C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\obj\Debug\Deamon.pdb
 C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\obj\Debug\Deamon.exe.config
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\bin\Debug\Deamon.exe.config
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\bin\Debug\Deamon.exe
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\bin\Debug\Deamon.pdb
@@ -25,3 +24,8 @@ C:\Users\domva\Documents\GitHub\Deamonn\Deamon\obj\Debug\Deamon.csproj.CoreCompi
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\obj\Debug\Deamon.csproj.CopyComplete
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\obj\Debug\Deamon.exe
 C:\Users\domva\Documents\GitHub\Deamonn\Deamon\obj\Debug\Deamon.pdb
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Quartz.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Topshelf.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Quartz.pdb
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Quartz.xml
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\Topshelf.xml
