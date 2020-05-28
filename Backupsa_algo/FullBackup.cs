@@ -7,70 +7,43 @@ using System.IO;
 
 namespace Deamon.Backupsa_algo
 {
-   public class FullBackup
-    {
-
-        public Config config { get; set; } = new Config();
-
-
-        DirectoryInfo Source { get; set; }
-        DirectoryInfo Target { get; set; }
-
-
-        public void Write()
+   public class FullBackup : BackupTemplate
+    {              
+        public FullBackup(string sSource, string sTarget) : base(sSource, sTarget)
         {
-            config.Write(Target.FullName +  "\\configuration.txt");
+            config = new Config();
+            config.snapshots = new List<ModelSnapshot>();
+
+            CreateFull(Source, Target);          
+
+            Write();
         }
 
-        public FullBackup(string sSource, string sTarget)
+        public void CreateFull(DirectoryInfo Source, DirectoryInfo Destination)
         {
-            Source = new DirectoryInfo(sSource);
-            Target = new DirectoryInfo(sTarget);
+            //foreach (FileInfo item in Source.GetFiles())
+            //{
+            //    config.snapshots.Add(new ModelSnapshot() {
+            //        path = item.FullName,
+            //        type = "FILE",
+            //        created = item.CreationTime
+            //    });               
+            //    item.CopyTo(Path.Combine(Destination.FullName, item.Name));
+            //}
 
-            CopyFull(Source, Target);
+            //foreach (DirectoryInfo diSourceSubDir in Source.GetDirectories())
+            //{
+            //    DirectoryInfo nextTargetSubDir =
+            //        Destination.CreateSubdirectory(diSourceSubDir.Name);
+            //    config.snapshots.Add(new ModelSnapshot() {
+            //        path = diSourceSubDir.FullName,
+            //        type = "DIR",
+            //        created = diSourceSubDir.CreationTime
+            //    });
+            //    CreateFull(diSourceSubDir, nextTargetSubDir);
+            //}
 
-
-        }
-
-        public void CopyFull(DirectoryInfo Source, DirectoryInfo Destination)
-        {
-            Directory.CreateDirectory(Destination.FullName);
-
-            foreach (FileInfo item in Source.GetFiles())
-            {
-                item.CopyTo(Path.Combine(Destination.FullName, item.Name));
-
-
-
-                config.snapshots.Add(new ModelSnapshot() {
-
-                    path = item.FullName,
-                    type = "file",
-                    created = item.CreationTime
-
-
-                });
-               
-            }
-
-
-            foreach (DirectoryInfo diSourceSubDir in Source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir =
-                    Destination.CreateSubdirectory(diSourceSubDir.Name);
-                CopyFull(diSourceSubDir, nextTargetSubDir);
-
-                config.snapshots.Add(new ModelSnapshot()
-                {
-
-                    path = diSourceSubDir.FullName,
-                    type = "Dir",
-                    created = diSourceSubDir.CreationTime
-
-
-                });
-
-            }
+            this.BackupWSnapshot();
 
         }
 

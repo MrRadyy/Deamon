@@ -22,7 +22,6 @@ namespace Deamon
         {
             scheduler.Start().GetAwaiter().GetResult();
             JobSet(); 
-
         }
         public void Stop()
         {
@@ -31,11 +30,9 @@ namespace Deamon
 
         public void JobSet()
         {
-            //Testing FUCTIONALITY 
-            //IJobDetail job = JobBuilder.Create(typeof(BacJob)).Build();
-            //ITrigger trigger = TriggerBuilder.Create().StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(1).RepeatForever()).Build();
-            //job.JobDataMap.Add("ID", 37);
-            //scheduler.ScheduleJob(job, trigger).GetAwaiter().GetResult();
+            IJobDetail InfoJob = JobBuilder.Create(typeof(LoadInfoJob)).Build();
+            ITrigger InfoTrigger = TriggerBuilder.Create().StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(5).RepeatForever()).Build();
+            scheduler.ScheduleJob(InfoJob, InfoTrigger).GetAwaiter().GetResult();
 
             foreach (var item in Api_Helper.Temp_Get().Result)
             {
@@ -46,6 +43,7 @@ namespace Deamon
             }
 
         }
+
 
     }
 }

@@ -9,9 +9,7 @@ namespace Deamon
 {
    public class Config
     {
-      public  List<ModelSnapshot> snapshots = new List<ModelSnapshot>();
-
-       
+        public List<ModelSnapshot> snapshots = new List<ModelSnapshot>();
 
          public string Serialize()
         {

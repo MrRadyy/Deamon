@@ -78,12 +78,14 @@
   <ItemGroup>
     <Compile Include="Api_Helper.cs" />
     <Compile Include="BacJob.cs" />
+    <Compile Include="Backupsa_algo\BackupTemplate.cs" />
     <Compile Include="Backupsa_algo\DifferentialBackup.cs" />
     <Compile Include="Backupsa_algo\FullBackup.cs" />
     <Compile Include="Backupsa_algo\IncrementalBackup.cs" />
     <Compile Include="Computers.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="LoadInfoJob.cs" />
     <Compile Include="ModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
