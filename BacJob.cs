@@ -27,6 +27,52 @@ namespace Deamon
             {
                 var IncBackup = new IncrementalBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
             }
+            else if(Type == "UNCFULL")
+            {
+                using (UNCAccessWithCredentials.UNCAccessWithCredentials unc = new UNCAccessWithCredentials.UNCAccessWithCredentials())
+                {
+                    if (unc.NetUseWithCredentials(@"\\kacenka.litv.sssvt.cz\StudentiPrenosne\PerinaRadek", "perinaradek", "litv", "okmujm987"))
+                    {
+                       var FullBackup = new FullBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
+                    }
+                    else
+                    {
+                        throw new Exception("Neplatné přihlašovací údaje");
+                    }
+                }
+
+            }
+            else if (Type == "UNCINC")
+            {
+                using (UNCAccessWithCredentials.UNCAccessWithCredentials unc = new UNCAccessWithCredentials.UNCAccessWithCredentials())
+                {
+                    if (unc.NetUseWithCredentials(@"\\kacenka.litv.sssvt.cz\StudentiPrenosne\PerinaRadek", "perinaradek", "litv", "okmujm987"))
+                    {
+                        var IncBackup = new IncrementalBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
+                    }
+                    else
+                    {
+                        throw new Exception("Neplatné přihlašovací údaje");
+                    }
+                }
+
+            }
+            else if (Type == "UNCDIFF")
+            {
+                using (UNCAccessWithCredentials.UNCAccessWithCredentials unc = new UNCAccessWithCredentials.UNCAccessWithCredentials())
+                {
+                    if (unc.NetUseWithCredentials(@"\\kacenka.litv.sssvt.cz\StudentiPrenosne\PerinaRadek", "perinaradek", "litv", "okmujm987"))
+                    {
+                        var DiffBackup = new DifferentialBackup(Temp.Source, Temp.Destination, Temp.Save_Options);
+                    }
+                    else
+                    {
+                        throw new Exception("Neplatné přihlašovací údaje");
+                    }
+                }
+
+            }
+            
             else
             {
                 throw new Exception("Unexpected type of backup :/");

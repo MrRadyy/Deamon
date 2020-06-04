@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Compression;
-
-
+using System.Threading;
+using System.Net;
+using FluentFTP; 
 namespace Deamon
 {
     public class BackupTemplate
@@ -17,7 +18,7 @@ namespace Deamon
 
         protected DirectoryInfo Source { get; set; }
         protected DirectoryInfo Target { get; set; }
-
+ 
         protected  string SaveOption { get; set; }
         
         public BackupTemplate(string sSource, string sTarget,string SaveOptionQ)
@@ -79,7 +80,8 @@ namespace Deamon
             List<string> Comparison = new List<string>();
 
             string zipPath = @".\result.zip";
-
+                       
+            
             foreach (string item in Compare(this.ConfigPath, Source.FullName))
             {
                 string[] ItemParts = item.Split('\\');
@@ -100,15 +102,26 @@ namespace Deamon
                 
 
             }
-
-            if(SaveOption == "rar" || SaveOption ==  "RAR")
+            var templates = Api_Helper.Temp_Get().Result;
+            foreach (var item in templates)
             {
-                ZipFile.CreateFromDirectory(Target.FullName, Path.Combine(Target.FullName + @".zip"));
+                if (item.Save_Options == "rar" || item.Save_Options == "RAR" || item.Save_Options == "RAM")
+                {
+                    ZipFile.CreateFromDirectory(Target.FullName, Path.Combine(Target.FullName + @".zip"));
+                }
+
+            }
+
+
+            foreach (var item in templates)
+            {
+                if (item.Destination == "FTP")
+                    FTP.FTPBackup(); 
+               
             }
             
-
             return Comparison;
-        }
+        }       
 
         protected void BackupWSnapshot()
         {
@@ -134,6 +147,6 @@ namespace Deamon
             return JsonConvert.DeserializeObject<Config>(text);
         }
 
-
+       
     }
 }

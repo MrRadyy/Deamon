@@ -48,3 +48,8 @@ C:\Users\domva\Documents\GitHub\Deamon\Deamon\Deamon\obj\Debug\Deamon.csproj.Cop
 C:\Users\domva\Documents\GitHub\Deamon\Deamon\Deamon\obj\Debug\Deamon.exe
 C:\Users\domva\Documents\GitHub\Deamon\Deamon\Deamon\obj\Debug\Deamon.pdb
 C:\Users\domva\Documents\GitHub\Deamon\Deamon\Deamon\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\FluentFTP.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\FluentFTP.xml
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\UNCAccessWithCredentials.dll
+C:\Users\Radyy\Desktop\PROJEKT\Deamon\Deamon\bin\Debug\UNCAccessWithCredentials.pdb

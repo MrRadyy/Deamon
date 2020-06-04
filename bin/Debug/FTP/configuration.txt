@@ -1,0 +1,9 @@
+{
+  "snapshots": [
+    {
+      "path": "C:\\Users\\Radyy\\Desktop\\PROJEKT\\Tomáš\\123456",
+      "type": "DIR",
+      "created": "2020-05-29T08:42:59.8188203+02:00"
+    }
+  ]
+}

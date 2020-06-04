@@ -58,9 +58,10 @@ namespace Deamon
                 File.Delete(PATH); 
             }
             StreamWriter writer = new StreamWriter(PATH);
+                writer.Write(temp);
+                writer.Dispose();
+            
          
-            writer.Write(temp);
-            writer.Dispose(); 
         }
         
     }
