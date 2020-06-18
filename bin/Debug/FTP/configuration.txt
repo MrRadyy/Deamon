@@ -1,9 +1,14 @@
 {
   "snapshots": [
     {
-      "path": "C:\\Users\\Radyy\\Desktop\\PROJEKT\\Tomáš\\123456",
+      "path": "C:\\Users\\Radyy\\Desktop\\PROJEKT\\Temp\\text.txt",
+      "type": "FILE",
+      "created": "2020-06-03T22:16:38.6524503+02:00"
+    },
+    {
+      "path": "C:\\Users\\Radyy\\Desktop\\PROJEKT\\Temp\\Nová složka",
       "type": "DIR",
-      "created": "2020-05-29T08:42:59.8188203+02:00"
+      "created": "2020-06-03T22:16:34.1569102+02:00"
     }
   ]
 }

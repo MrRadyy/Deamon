@@ -35,6 +35,15 @@ namespace Deamon
            
         }
 
+        public async static Task Bac_Post(Backup backup)
+        {
+            string temp = JsonConvert.SerializeObject(backup);
+            StringContent content = new StringContent(temp, UnicodeEncoding.UTF8, "application/json");
+            await Client.PostAsync("http://localhost:3306/api/Backup/Post", content);
+            
+        }
+
+
         public async static Task <int> Comp_Post(Computers computer)
         {
             string temp = JsonConvert.SerializeObject(computer);

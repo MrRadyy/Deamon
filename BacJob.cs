@@ -75,12 +75,15 @@ namespace Deamon
             
             else
             {
+                Task.WaitAll(Api_Helper.Bac_Post(new Backup { Made = DateTime.Now, Name = Type + " " + DateTime.Now, Job = 30, Size = Temp.Destination, Succesful = false }));
                 throw new Exception("Unexpected type of backup :/");
+
             }
 
             Console.WriteLine("BACKUP DONE");
             Console.WriteLine("ID: " + Temp.id);
             Console.WriteLine("Type: " + Temp.Type_Of_Backup);
+           Task.WaitAll( Api_Helper.Bac_Post(new Backup { Made = DateTime.Now, Name = Type + " " + DateTime.Now, Job = 30, Size = Temp.Destination, Succesful = true }));
 
             return Task.CompletedTask;  
         }

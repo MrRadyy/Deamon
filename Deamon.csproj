@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Api_Helper.cs" />
     <Compile Include="BacJob.cs" />
+    <Compile Include="Backup.cs" />
     <Compile Include="Backupsa_algo\BackupTemplate.cs" />
     <Compile Include="Backupsa_algo\DifferentialBackup.cs" />
     <Compile Include="Backupsa_algo\FullBackup.cs" />
